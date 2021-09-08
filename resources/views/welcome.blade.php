@@ -8,9 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-<h1>laravel
-
-</h1>
+<link rel="stylesheet" href="{{asset('js/app.css')}}">
 
         <!-- Styles -->
         <style>
@@ -67,27 +65,13 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+  
+        <h1>laravel
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        </h1>
+        <div class="container">
             <div id="app">
-                <example-component></example-component>
-            </div>
-            <div class="content">
-              
-             
-           
+                <home></home>
             </div>
         </div>
         <script src="{{asset('js/app.js')}}"></script>

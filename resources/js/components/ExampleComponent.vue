@@ -13,11 +13,28 @@
         </div>
     </div>
 </template>
+<script >
 
-<script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+export default{
+data(){
+    return{
+        posts : {}
     }
+},
+created(){
+    this.getPosts();
+},
+methods:{
+    getPosts(){
+        axios.get('/api/posts')
+        .then(response=>{
+            console.log(response.data);
+            this.posts = response.data
+        })
+        .catch(err=>console.log(err));
+    }
+},
+}
+
 </script>
+
