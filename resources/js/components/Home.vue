@@ -1,14 +1,21 @@
 <template> 
     
 <div class="container">
-    <div class="row">
+    <div class="row my-4">
        <div class="col-md-8 col-md-offset-2">
-           <div class="panel panel-default">
-               <div class="panel-heading">Example Component</div>
-                    <div class="panel-body">
-                        I'm an example component!
-                    </div>
-                </div>
+      <div class="card ">
+ 
+        <div class="card-body" v-for="(post,index) in posts.data"
+        :key="index">
+        <div class="media">
+            <img :src="post.photo" alt="">
+                    <h4 class="card-title">{{post.title}}</h4>
+          <p class="card-text">{{post.body.substr(0,200)}}</p>
+      
+        </div>
+ 
+        </div>
+      </div>
             </div>
         </div>
     </div>
